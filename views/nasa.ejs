@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+
+<div class="container my-5">
+  <h1 class="mb-4 text-lowercase">nasa picture of the day</h1>
+
+  <% if (apod.url) { %>
+    <% if (apod.media_type === 'video') { %>
+      <div class="ratio ratio-16x9 mb-4">
+        <iframe src="<%= apod.url %>" allowfullscreen></iframe>
+      </div>
+    <% } else { %>
+      <img src="<%= apod.hdurl || apod.url %>" class="img-fluid rounded shadow mb-4" alt="<%= apod.title %>">
+    <% } %>
+
+    <h3><%= apod.title %></h3>
+    <p class="text-muted mb-3">date: <%= apod.date %></p>
+    <p class="lead"><%= apod.explanation %></p>
+  <% } else { %>
+    <div class="alert alert-warning">
+      unable to load today's picture. please try again later.
+    </div>
+  <% } %>
+</div>
+
+<%- include('partials/footer') %>

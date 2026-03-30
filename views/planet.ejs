@@ -1,0 +1,44 @@
+<%- include('partials/header') %>
+
+<div class="container my-5">
+  <div class="row g-4 align-items-start">
+    <div class="col-md-6">
+      <img src="<%= planetInfo.image %>" class="img-fluid rounded shadow" alt="<%= name %>">
+    </div>
+    <div class="col-md-6">
+      <h1 class="display-4 text-lowercase"><%= name %></h1>
+      <p class="lead"><%= planetInfo.description %></p>
+
+      <table class="table table-dark table-bordered mt-3">
+        <tbody>
+          <tr>
+            <th>radius</th>
+            <td><%= planetInfo.radius %> miles</td>
+          </tr>
+          <tr>
+            <th>moons</th>
+            <td><%= planetInfo.moons %></td>
+          </tr>
+          <tr>
+            <th>distance from sun</th>
+            <td><%= planetInfo.distanceFromSun %></td>
+          </tr>
+          <tr>
+            <th>year length</th>
+            <td><%= planetInfo.yearLength %></td>
+          </tr>
+          <tr>
+            <th>one earth day</th>
+            <td><%= planetInfo.oneEarthDay %></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <a href="<%= planetInfo.websiteLink %>" target="_blank" class="btn btn-outline-info">
+       visit nasa.gov to learn more
+      </a>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

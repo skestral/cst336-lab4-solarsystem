@@ -1,0 +1,64 @@
+body {
+  background-color: #0a0a1a;
+  color: #e0e0ff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* full-page hero with random bg image */
+.hero {
+  min-height: calc(100vh - 56px);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.65);
+  padding: 2.5rem 4rem;
+  border-radius: 10px;
+  color: #fff;
+  max-width: 700px;
+}
+
+.hero-overlay h1 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+/* nav tweaks */
+.navbar-brand {
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+}
+
+.nav-link {
+  text-transform: lowercase;
+}
+
+/* tables */
+.table-dark {
+  --bs-table-bg: #111827;
+}
+
+th {
+  text-transform: lowercase;
+  color: #93c5fd;
+}
+
+/* planet page image */
+.img-fluid.shadow {
+  box-shadow: 0 0 30px rgba(100, 150, 255, 0.25);
+}
+
+footer {
+  border-top: 1px solid #1f2937;
+  margin-top: auto;
+}

@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+
+<div class="hero" style="background-image: url('<%= bgImage %>')">
+  <div class="hero-overlay">
+    <h1>the solar system</h1>
+    <p class="lead">go ahead and pick a planet from the nav to start exploring</p>
+    <div class="planet-links mt-4">
+      <% planets.forEach(p => { %>
+        <a href="/planet?name=<%= p %>" class="btn btn-outline-light btn-sm m-1"><%= p %></a>
+      <% }) %>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
