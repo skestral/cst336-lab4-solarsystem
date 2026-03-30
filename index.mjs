@@ -1,6 +1,10 @@
 import express from 'express';
 import fetch from 'node-fetch';
 import { createRequire } from 'module';
+import { fileURLToPath } from 'url';
+import path from 'path';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // pull in the cjs solar package
 const require = createRequire(import.meta.url);
@@ -8,7 +12,8 @@ const solar = require('npm-solarsystem');
 
 const app = express();
 app.set('view engine', 'ejs');
-app.use(express.static('public'));
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 const planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
 const NASA_KEY = process.env.NASA_KEY || '9mUzIkhlZCZaOoMfspg7jMmwZCZ4LiRHtkgkambD';
